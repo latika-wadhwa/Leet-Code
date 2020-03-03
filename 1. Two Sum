@@ -24,5 +24,13 @@ class Solution:
                 return [nums_dict[val],ptr]
             nums_dict[nums[ptr]]=ptr
             ptr+=1
-            
+
+
+Submission:
+
+29 / 29 test cases passed.
+Status: Accepted
+Runtime: 48 ms
+Memory Usage: 14.3 MB
+Submitted: 1 day ago
             

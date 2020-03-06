@@ -1,0 +1,42 @@
+Question:
+Write a SQL query to find all numbers that appear at least three times consecutively.
+
++----+-----+
+| Id | Num |
++----+-----+
+| 1  |  1  |
+| 2  |  1  |
+| 3  |  1  |
+| 4  |  2  |
+| 5  |  1  |
+| 6  |  2  |
+| 7  |  2  |
++----+-----+
+For example, given the above Logs table, 1 is the only number that appears consecutively for at least three times.
+
++-----------------+
+| ConsecutiveNums |
++-----------------+
+| 1               |
++-----------------+
+
+Solution:
+
+Select 
+    Distinct Num AS ConsecutiveNums
+FROM
+    Logs a
+WHERE
+   Num = (Select num from Logs where id = (a.id+1) ) 
+   AND 
+   NUM = (Select num from Logs where id = (a.id+2) )
+   
+Submission Details:
+Runtime: 905 ms, faster than 86.18% of MS SQL Server online submissions for Consecutive Numbers.
+Memory Usage: 0B, less than 100.00% of MS SQL Server online submissions for Consecutive Numbers.
+21 / 21 test cases passed.
+Status: Accepted
+Runtime: 905 ms
+Memory Usage: 0B
+Submitted: 5 minutes ago
+
